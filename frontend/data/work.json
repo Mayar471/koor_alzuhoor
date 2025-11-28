@@ -1,0 +1,72 @@
+[
+    {
+        "id": 101,
+        "date": "2024",
+        "titleAr": "مسرحية 'قبل السقوط'",
+        "titleEn": "Play 'Before the Fall'",
+        "summaryAr": "المسرحية التي مثلت العودة القوية للفرقة وافتتاح مهرجان الماغوط المسرحي.",
+        "summaryEn": "The play that represented the troupe's strong return and the opening of Al-Maghout Theatrical Festival.",
+        "contentAr": "المحتوى الكامل للعمل المسرحي الأول...",
+        "contentEn": "Full content of the first theatrical work...",
+        "coverImageUrl": "../images/works/work_101_poster.jpg",
+        "coverImageAltAr": "ملصق مسرحية قبل السقوط",
+        "coverImageAltEn": "Poster for the play 'Before the Fall'",
+        "images": [
+            {
+                "url": "../images/works/work_101_poster.jpg",
+                "altAr": "ملصق العمل 101"
+            },
+            {
+                "url": "../images/works/work_101_scene.jpg",
+                "altAr": "مشهد من المسرحية 101"
+            }
+        ],
+        "isFeatured": true,
+        "facebookPostLink": "https://facebook.com/work/101",
+        "instagramPostLink": "https://instagram.com/work/101"
+    },
+    {
+        "id": 102,
+        "date": "2022",
+        "titleAr": "مسرحية 'مدينة الرياح'",
+        "titleEn": "Play 'City of Winds'",
+        "summaryAr": "عمل درامي نقدي حصد جائزة أفضل نص مسرحي على مستوى سوريا.",
+        "summaryEn": "A critical drama that won the Best Theatrical Text Award in Syria.",
+        "contentAr": "المحتوى الكامل للعمل المسرحي الثاني...",
+        "contentEn": "Full content of the second theatrical work...",
+        "coverImageUrl": "../images/works/work_102_poster.jpg",
+        "coverImageAltAr": "ملصق مسرحية مدينة الرياح الفائزة",
+        "coverImageAltEn": "Poster for the award-winning play 'City of Winds'",
+        "images": [
+            {
+                "url": "../images/works/work_102_poster.jpg",
+                "altAr": "ملصق العمل 102"
+            }
+        ],
+        "isFeatured": false,
+        "facebookPostLink": "https://facebook.com/work/102",
+        "instagramPostLink": "https://instagram.com/work/102"
+    },
+    {
+        "id": 103,
+        "date": "2018",
+        "titleAr": "مسرحية 'الحائط الرابع'",
+        "titleEn": "Play 'The Fourth Wall'",
+        "summaryAr": "من الأعمال الكلاسيكية القديمة للفرقة، تم إعادة عرضها في مهرجان حلب.",
+        "summaryEn": "One of the troupe's old classic works, re-performed at the Aleppo Festival.",
+        "contentAr": "المحتوى الكامل للعمل المسرحي الثالث...",
+        "contentEn": "Full content of the third theatrical work...",
+        "coverImageUrl": "../images/works/work_103_poster.jpg",
+        "coverImageAltAr": "ملصق مسرحية الحائط الرابع",
+        "coverImageAltEn": "Poster for the play 'The Fourth Wall'",
+        "images": [
+            {
+                "url": "../images/works/work_103_poster.jpg",
+                "altAr": "ملصق العمل 103"
+            }
+        ],
+        "isFeatured": false,
+        "facebookPostLink": "https://facebook.com/work/103",
+        "instagramPostLink": "https://instagram.com/work/103"
+    }
+]

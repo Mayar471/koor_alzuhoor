@@ -1,0 +1,65 @@
+[
+    {
+        "id": 201,
+        "date": "2024",
+        "titleAr": "تغطية اليوم الأول لمهرجان الماغوط",
+        "titleEn": "Day 1 Coverage of Al-Maghout Festival",
+        "summaryAr": "ملخص شامل لأحداث اليوم الأول من المهرجان والفرق المشاركة في سلمية.",
+        "summaryEn": "Comprehensive summary of the first day's events and participating troupes in Salamiyah.",
+        "contentAr": "تغطية مفصلة مع أسماء الفائزين والمشاركين...",
+        "contentEn": "Detailed coverage including winners' names and participants...",
+        "coverImageUrl": "../images/archive/maghout_201_photo.jpg",
+        "coverImageAltAr": "صورة من حفل الافتتاح لمهرجان الماغوط",
+        "coverImageAltEn": "Opening ceremony photo for Al-Maghout Festival",
+        "images": [
+            {
+                "url": "../images/archive/maghout_201_photo.jpg",
+                "altAr": "صورة من حفل الافتتاح"
+            }
+        ],
+        "facebookPostLink": "https://facebook.com/archive/201",
+        "instagramPostLink": "https://instagram.com/archive/201"
+    },
+    {
+        "id": 202,
+        "date": "2024",
+        "titleAr": "ندوة 'دور الماغوط في المسرح السوري'",
+        "titleEn": "Symposium 'Al-Maghout's Role in Syrian Theatre'",
+        "summaryAr": "تقرير عن الندوة التي أقيمت بحضور نقاد وممثلين بارزين في دمشق.",
+        "summaryEn": "Report on the symposium held with prominent critics and actors in Damascus.",
+        "contentAr": "تفاصيل النقاشات التي دارت في الندوة...",
+        "contentEn": "Details of the discussions held at the symposium...",
+        "coverImageUrl": "../images/archive/maghout_202_photo.jpg",
+        "coverImageAltAr": "صورة من ندوة دور الماغوط في المسرح",
+        "coverImageAltEn": "Photo from the symposium on Al-Maghout's role in theatre",
+        "images": [
+            {
+                "url": "../images/archive/maghout_202_photo.jpg",
+                "altAr": "صورة من الندوة"
+            }
+        ],
+        "facebookPostLink": "https://facebook.com/archive/202",
+        "instagramPostLink": "https://instagram.com/archive/202"
+    },
+    {
+        "id": 203,
+        "date": "2023",
+        "titleAr": "معرض صور الماغوط النادرة",
+        "titleEn": "Rare Al-Maghout Photo Exhibition",
+        "summaryAr": "افتتاح معرض لصور نادرة للماغوط لأول مرة في المركز الثقافي.",
+        "summaryEn": "Opening of an exhibition of rare photos of Al-Maghout for the first time at the Cultural Center.",
+        "contentAr": "تفاصيل المعرض والجهات المشاركة فيه...",
+        "contentEn": "Details of the exhibition and participating parties...",
+        "coverImageUrl": "../images/archive/maghout_203_photo.jpg",
+        "coverImageAltAr": "صورة للماغوط من المعرض النادر",
+        "coverImageAltEn": "Rare Al-Maghout photo from the exhibition",
+        "images": [
+            {
+                "url": "../images/archive/maghout_203_photo.jpg",
+                "altAr": "صورة للماغوط"
+            }
+        ],
+        "facebookPostLink": "https://facebook.com/archive/203",
+        "instagramPostLink": "https://instagram.com/archive/203"
+    }
+]

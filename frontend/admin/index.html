@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>لوحة التحكم | كور الزهور</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <div class="main-wrapper">
+        <header class="admin-header">
+            <div class="logo-area">
+                <img src="logo.jpg" alt="فرقة كور الزهور المسرحية" class="site-logo">
+            </div>
+            <div class="welcome-area">
+                مرحباً بك، <span id="admin-name">المدير</span>
+            </div>
+            <div class="header-actions">
+                <a href="#" id="logout-btn" class="nav-action-btn"><i class="fas fa-sign-out-alt"></i> تسجيل الخروج</a>
+            </div>
+        </header>
+
+        <nav class="admin-nav">
+            <div class="nav-section-title"><i class="fas fa-tools"></i> الإجراءات</div>
+            <a href="add_work.html" id="add-new-work-btn" class="nav-link primary-action-btn"><i class="fas fa-plus-circle"></i> إضافة منشور جديد</a>
+            <a href="team.html" id="manage-team-link" class="nav-link"><i class="fas fa-users-cog"></i> إدارة فريق العمل</a>
+            <a href="change-password.html" id="change-password-link" class="nav-link"><i class="fas fa-key"></i> تغيير كلمة المرور</a>
+            
+            <div class="nav-section-title mt-3"><i class="fas fa-filter"></i> تصفية المنشورات</div>
+            <a href="#" class="nav-link filter-btn active" data-filter="all"><i class="fas fa-list-ul"></i> المنشورات العامة</a>
+            <a href="#" class="nav-link filter-btn" data-filter="featured"><i class="fas fa-star"></i> أهم الأعمال</a>
+            <a href="#" class="nav-link filter-btn" data-filter="festival"><i class="fas fa-masks-theater"></i> منشورات مهرجان الماغوط</a>
+            <a href="#" class="nav-link filter-btn" data-filter="news"><i class="fas fa-newspaper"></i> آخر الأخبار</a>
+            <a href="#" class="nav-link filter-btn" data-filter="timeline"><i class="fas fa-history"></i> منشورات الخط الزمني</a>
+            <a href="#" class="nav-link filter-btn" data-filter="ticker"><i class="fas fa-ticker"></i>  الأرشيف</a>
+            <a href="#" class="nav-link filter-btn" data-filter="article"><i class="fas fa-article"></i>  المقالات</a>
+   
+            
+            <div class="nav-section-title mt-3"><i class="fas fa-search"></i> البحث</div>
+            <div class="search-box">
+                <input type="text" id="search-input" placeholder="ابحث بعنوان أو ملخص..." class="form-control">
+                <button id="search-btn" class="search-btn"><i class="fas fa-search"></i></button>
+            </div>
+        </nav>
+
+        <main class="admin-content">
+
+            <h1 id="content-title">المنشورات العامة</h1>
+            <div id="status-message-index" class="status-message" style="display: none;"></div>
+            <div class="loading-spinner" id="loading-spinner" style="display: none;">
+                <i class="fas fa-spinner fa-spin"></i> جارٍ تحميل البيانات...
+            </div>
+
+            <div class="posts-table-container">
+                <table id="works-table" class="data-table">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>العنوان (عربي)</th>
+                            <th>النوع</th>
+                            <th>تاريخ النشر/الإنتاج</th>
+                            <th>الإجراءات</th>
+                        </tr>
+                    </thead>
+                    <tbody id="works-list">
+                        </tbody>
+                </table>
+            </div>
+        </main>
+    </div>
+
+    <script src="./js/index.js"></script>
+</body>
+</html>

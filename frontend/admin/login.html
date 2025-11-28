@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تسجيل دخول المدير | فرقة كور الزهور</title>
+    <link rel="stylesheet" href="./css/login.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+
+</head>
+
+<body>
+    <div class="login-container">
+        <div class="login-card">
+            <h2>لوحة تحكم موقع فرقة كور الزهور</h2>
+            <h3>تسجيل الدخول للمدير</h3>
+            <form id="login-form">
+                <div class="form-group">
+                    <label for="email">البريد الإلكتروني:</label>
+                    <input type="email" id="email" name="email" class="form-control" required>
+                </div>
+                
+                <div class="form-group password-toggle">
+                    <label for="password">كلمة المرور:</label>
+                    <input type="password" id="password" name="password" class="form-control" required>
+                    <button type="button" class="toggle-btn" data-target="password">
+                        <i class="fas fa-eye"></i>
+                    </button>
+                </div>
+                
+                <button type="submit" id="login-btn">
+                    تسجيل الدخول
+                    <span id="login-spinner" class="spinner" style="display: none;"></span> 
+                </button>
+                <p id="error-message" class="error-message"></p>
+            </form>
+        </div>
+    </div>
+
+    <script src="./js/login.js"></script>
+</body>
+
+</html>

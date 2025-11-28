@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-en="🎭 Koor Al-Zuhur - All Works">🎭 كور الزهور - جميع أعمال الفرقة</title>
+    <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Almarai:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:wght=700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <link rel="stylesheet" href="style/style.css"> 
+</head>
+<body>
+   <header class="navbar">
+        <div class="logo">
+            <img src="images/light_logo.jpg" alt="شعار فرقة كور الزهور" class="logo-img">
+            <h1 data-en="Koor Al-Zuhur" data-de="Koor Al-Zuhur">فرقة كور الزهور المسرحية </h1>
+        </div>
+        <nav id="main-nav"> 
+            <a href="index.html" class="active" data-en="Home" data-de="Startseite">الرئيسية</a>
+            <a href="archive.html" data-en="About Us" data-de="Über uns">من نحن</a>
+             <a href="article.html" data-en="Articles" data-de="Artikelliste ">المقالات </a>
+            <a href="works.html" data-en="All Works" data-de="Alle Werke" id="nav-all-works">أعمال الفرقة</a> 
+            <a href="maghout.html" data-en="Al-Maghout Archive" data-de="Al-Maghout Archiv">مهرجان الماغوط</a>
+            <a href="contact.html" data-en="Contact Us" data-de="Kontakt">تواصل معنا</a>
+        </nav>
+        <div class="utility-controls">
+            <button id="theme-toggle" class="control-button" aria-label="تبديل الوضع الليلي">
+                <i class="fas fa-sun"></i> 
+            </button>
+            
+            <div class="lang-dropdown" id="lang-dropdown-wrapper">
+                <button class="control-button lang-btn" id="lang-menu-button" aria-label="تغيير اللغة">
+                    <i class="fas fa-globe"></i> <span id="current-lang-display">AR</span>
+                    <i class="fas fa-caret-down" style="margin-right: 5px;"></i>
+                </button>
+                <div class="dropdown-content" id="lang-dropdown-content">
+                    <a href="#" data-lang="ar" class="lang-option"><span class="flag-icon">🇸🇾</span> العربية</a>
+                    <a href="#" data-lang="en" class="lang-option"><span class="flag-icon">🇺🇸</span> English</a>
+                    <a href="#" data-lang="de" class="lang-option"><span class="flag-icon">🇩🇪</span> Deutsch</a>
+                </div>
+            </div>
+
+        </div>
+        <button class="nav-toggle" id="nav-toggle-btn" aria-label="القائمة">
+            <i class="fas fa-bars"></i>
+        </button>
+    </header>
+    <main>
+        
+        <section id="all-works" class="works-section">
+            <h2 class="section-title">
+                <i class="fas fa-scroll"></i>
+                <span data-en="Our Complete Theatrical Repertoire" 
+                data-de="Unser komplettes Theaterrepertoire">جميع أعمال الفرقة المسرحية</span>
+            </h2>
+            
+            <div class="works-grid" id="all-works-container">
+                <p data-en="Loading works..." data-de="Das Laden funktioniert...">جاري تحميل الأعمال...</p>
+            </div>
+
+        </section>
+
+    </main>
+
+     <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-col footer-info">
+                <p data-en="A theatrical troupe committed to presenting art that touches reality and illuminates human issues."
+                   data-de="Eine Theatertruppe, die sich der Kunst verschrieben hat, die die Realität berührt.">
+                   فرقة مسرحية ملتزمة بتقديم فن يلامس الواقع ويضيء على القضايا الإنسانية، مقرها مدينة سلمية.
+                </p>
+            </div>
+            <div class="footer-col footer-contact">
+                <h4 data-en="Contact Us" data-de="Kontakt">تواصل معنا</h4>
+                <ul>
+                    <li id="footer-contact-email"><i class="fas fa-envelope"></i> ...</li>
+                    <li id="footer-contact-location"><i class="fas fa-map-marker-alt"></i> ...</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p data-en="&copy; 2025 Koor Al-Zuhur. All rights reserved." 
+               data-de="&copy; 2025 Koor Al-Zuhur. Alle Rechte vorbehalten.">
+               &copy; 2025 كور الزهور المسرحية. جميع الحقوق محفوظة.
+            </p>
+            <div class="social-links" id="footer-social-links"></div>
+        </div>
+    </footer>
+
+
+    <script src="scripts/works.js"></script>
+</body>
+</html>

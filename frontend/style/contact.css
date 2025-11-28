@@ -1,0 +1,155 @@
+/* style/contact.css */
+
+.contact-section {
+    padding: 100px 0;
+    min-height: 80vh;
+    display: flex;
+    /* توسيط عمودي */
+    align-items: center; 
+    /* توسيط أفقي */
+    justify-content: center; 
+}
+
+.contact-card {
+    background-color: var(--color-background-secondary);
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: var(--shadow-medium);
+    max-width: 600px; 
+    margin: 40px auto;
+    text-align: center;
+    transition: transform 0.3s ease; 
+}
+
+.contact-card:hover {
+    transform: translateY(-3px); 
+}
+
+.contact-card h2 {
+    /* تم استبدال 'Amiri, serif' بـ 'var(--font-title)' إذا كان معرّفاً في style.css */
+    font-family: 'Amiri', serif; 
+    color: var(--color-primary);
+    margin-bottom: 15px;
+    font-size: 2.2rem;
+}
+
+.contact-card .description {
+    color: var(--color-text-secondary);
+    font-size: 1.1rem;
+    margin-bottom: 40px;
+    line-height: 1.6;
+}
+
+.contact-info-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    text-align: start;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px dashed var(--color-border); 
+}
+
+.contact-item:last-child {
+    border-bottom: none;
+}
+
+/* الرابط الشامل الذي يغلف الأيقونة والتفاصيل */
+.contact-link-wrapper {
+    display: flex;
+    align-items: center;
+    flex-grow: 1;
+    text-decoration: none;
+    color: inherit;
+    transition: all 0.3s;
+}
+
+/* تأثير الـ HOVER */
+.contact-link-wrapper:hover {
+     color: var(--color-primary); 
+     /* استخدام قيمة الـ RGB لإنشاء خلفية شفافة خفيفة */
+     background-color: rgba(var(--color-primary-rgb), 0.05); 
+     padding-inline-start: 10px;
+     border-radius: 5px;
+}
+
+.contact-link-wrapper:hover .icon-wrapper i {
+     color: var(--color-accent); 
+}
+
+.contact-item .icon-wrapper {
+    font-size: 1.8rem;
+    color: var(--color-primary);
+    margin-inline-end: 20px;
+    width: 30px; 
+    text-align: center;
+    transition: color 0.3s;
+}
+
+.contact-details {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.contact-details .label {
+    font-weight: 700;
+    color: var(--color-text-primary);
+    font-size: 0.9rem;
+    margin-bottom: 2px;
+}
+
+.contact-details .value {
+    font-size: 1.1rem;
+    color: var(--color-text-primary);
+    text-decoration: none;
+}
+
+/* تنسيق RTL - لعكس ترتيب الأيقونة والروابط في اللغة العربية */
+html[dir="rtl"] .contact-link-wrapper {
+    flex-direction: row-reverse; 
+    justify-content: flex-end;
+}
+/*
+|------------------------------------------------
+| 1.1. تعريف الألوان للوضع الفاتح (Light Mode)
+|------------------------------------------------
+*/
+body.light-mode .contact-section {
+    /* يمكنك تعيين خلفية أفتح للصفحة هنا */
+    background-color: #f7f7f7;
+}
+
+body.light-mode .contact-card {
+    /* خلفية البطاقة يجب أن تكون فاتحة ومتباينة */
+    background-color: #ffffff;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+body.light-mode .contact-card h2,
+body.light-mode .contact-item .contact-title {
+    /* تغيير لون العناوين */
+    color: var(--color-primary-light); /* إذا كان هذا متغير معرف لديك */
+    color: #333333; /* أو قيمة ثابتة */
+}
+
+body.light-mode .contact-card .description {
+    /* تغيير لون الوصف */
+    color: #555555;
+}
+
+body.light-mode .contact-item .icon-wrapper i {
+    /* تغيير لون أيقونات التواصل */
+    color: var(--color-accent-light); /* أو قيمة ثابتة */
+    color: #A80000; 
+}
+
+/* الرابط عند التفاعل في الوضع الفاتح */
+body.light-mode .contact-link-wrapper:hover {
+     background-color: #f7e084; /* لون أزرق خفيف */
+     color: #A80000;
+}

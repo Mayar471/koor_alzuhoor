@@ -1,0 +1,1224 @@
+:root {
+    /* الوضع الليلي (Dark Mode) - الافتراضي */
+    --color-bg-body: #0D0D0D;
+    --color-bg-card: #1A1A1A;
+    --color-bg-light: #121212; /* خلفية القسم (Timeline, Footer) */
+    --color-primary: #E6B800; /* الذهبي */
+    --color-secondary: #A80000; /* القرمزي */
+    --color-text: #F5F5F5; /* النص الفاتح (الرئيسي) */
+    --color-text-dark: #CCC; /* النص الداكن (الثانوي) */
+    --color-border: #444; 
+    --shadow-sm: 0 2px 5px rgba(0, 0, 0, 0.4);
+    --shadow-md: 0 5px 15px rgba(0, 0, 0, 0.6);
+    --border-radius: 8px;
+    
+    /* متغيرات للتوافق */
+    --color-background-secondary: var(--color-bg-light);
+    --color-text-primary: var(--color-text);
+    --color-text-secondary: var(--color-text-dark);
+}
+
+/* ------------------------------------------- */
+/* 1. التنسيقات العامة (Base Styles) */
+/* ------------------------------------------- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Almarai', sans-serif; 
+    background-color: var(--color-bg-body);
+    color: var(--color-text);
+    direction: rtl; 
+    line-height: 1.6;
+    transition: background-color 0.5s, color 0.5s;
+    overflow-x: hidden; /* لمنع التمرير الأفقي غير المرغوب */
+}
+
+h1, h2, h3 {
+    font-family: 'Amiri', serif; 
+    color: var(--color-primary); 
+    transition: color 0.5s;
+}
+
+a {
+    text-decoration: none;
+    color: var(--color-secondary);
+    transition: color 0.3s ease;
+}
+
+section {
+    padding: 100px 5%;
+    max-width: 1300px;
+    margin: 0 auto;
+    transition: background-color 0.5s;
+}
+
+.section-title {
+    font-size: 3rem;
+    text-align: center;
+    margin-bottom: 70px;
+    position: relative;
+    color: var(--color-primary);
+}
+
+.section-title i {
+    margin-left: 10px;
+    color: var(--color-secondary);
+}
+
+/* ------------------------------------------- */
+/* 2. شريط التنقل (Navbar) وأدوات المساعدة */
+/* ------------------------------------------- */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 5%;
+    background-color: rgba(13, 13, 13, 0.98); 
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.7);
+    transition: background-color 0.5s, box-shadow 0.5s;
+    height: 80px; /* تثبيت الارتفاع لضبط العناصر تحته */
+}
+
+.logo { display: flex; align-items: center; }
+.logo-img { height: 40px; margin-left: 15px; }
+
+.logo h1 {
+    font-size: 1.6rem;
+    color: var(--color-text);
+}
+
+.navbar nav a {
+    color: var(--color-text-dark);
+    margin-right: 25px;
+    font-size: 1rem;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.navbar nav a:hover,
+.navbar nav a.active {
+    color: var(--color-primary);
+}
+
+.utility-controls {
+    display: flex;
+    align-items: center;
+    gap: 15px; 
+}
+
+.control-button {
+    background: transparent;
+    border: 1px solid var(--color-border);
+    color: var(--color-text);
+    padding: 8px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.control-button:hover {
+    background-color: var(--color-secondary);
+    border-color: var(--color-secondary);
+    color: var(--color-text);
+}
+
+/* --- تنسيقات القائمة المنسدلة للغة (Language Dropdown) --- */
+.lang-dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none; /* مخفية افتراضياً */
+    position: absolute;
+    top: 100%; /* تظهر تحت الزر مباشرة */
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: var(--color-bg-card);
+    min-width: 160px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.5);
+    z-index: 1001;
+    border-radius: 5px;
+    border: 1px solid var(--color-border);
+    margin-top: 10px;
+    overflow: hidden;
+}
+
+/* سهم صغير فوق القائمة (اختياري) */
+.dropdown-content::before {
+    content: "";
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: transparent transparent var(--color-border) transparent;
+}
+
+/* كلاس يتم إضافته عبر JS لإظهار القائمة */
+.lang-dropdown.open .dropdown-content {
+    display: block;
+    animation: fadeIn 0.2s ease-in-out;
+}
+
+.lang-option {
+    color: var(--color-text);
+    padding: 12px 16px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: background-color 0.2s;
+    font-size: 0.9rem;
+}
+
+.lang-option:hover {
+    background-color: var(--color-bg-light);
+    color: var(--color-primary);
+}
+
+.flag-icon {
+    font-size: 1.2rem;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translate(-50%, -10px); }
+    to { opacity: 1; transform: translate(-50%, 0); }
+}
+
+/* ------------------------------------------- */
+/* 3. شريط آخر الأخبار (News Ticker) */
+/* ------------------------------------------- */
+.news-ticker-section {
+    background-color: var(--color-bg-light); 
+    padding: 12px 0;
+    border-bottom: 2px solid var(--color-secondary);
+    display: flex;
+    align-items: center;
+    font-size: 0.95rem;
+    position: relative;
+    z-index: 900; /* أقل من الناف بار */
+    margin-top: 80px; /* نفس ارتفاع الناف بار لمنع التداخل */
+    height: 50px;
+    overflow: hidden;
+}
+
+.news-ticker-section h3 {
+    flex-shrink: 0; 
+    margin: 0 20px 0 10px;
+    font-weight: 700;
+    color: var(--color-primary); 
+    font-size: 1rem;
+    white-space: nowrap;
+    z-index: 2;
+    background-color: var(--color-bg-light); /* لتغطية النص المتحرك تحته */
+    padding-left: 10px;
+}
+
+/* حاوية السلايدر */
+.news-ticker-slider-wrapper {
+    flex-grow: 1;
+    overflow: hidden;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    mask-image: linear-gradient(to left, transparent, black 10%, black 90%, transparent); /* تلاشي الحواف */
+    -webkit-mask-image: linear-gradient(to left, transparent, black 10%, black 90%, transparent);
+}
+
+.news-ticker-slider {
+    display: flex;
+    flex-wrap: nowrap;
+    /* الحركة تتم عبر JS */
+}
+
+/* العنصر داخل الشريط */
+.ticker-item {
+    display: inline-flex;
+    align-items: center;
+    color: var(--color-text);
+    padding: 0 30px;
+    white-space: nowrap;
+}
+
+.ticker-item a {
+    color: var(--color-text);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.ticker-item a:hover {
+    color: var(--color-primary);
+}
+
+/* ------------------------------------------- */
+/* 4. قسم البطل (Hero Section) والفيديو */
+/* ------------------------------------------- */
+.hero-section {
+    height: calc(100vh - 50px); /* طرح ارتفاع شريط الأخبار */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border-bottom: 5px solid var(--color-secondary); 
+    position: relative;
+    overflow: hidden; 
+    padding: 0;
+}
+
+#hero-video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: 1; 
+    transform: translate(-50%, -50%);
+    object-fit: cover;
+}
+
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6); 
+    z-index: 2; 
+}
+
+.hero-content {
+    position: relative;
+    z-index: 3; 
+    padding: 0 20px;
+}
+
+.main-title {
+    font-size: 4rem;
+    margin-bottom: 10px;
+    text-shadow: 0 0 15px rgba(230, 184, 0, 0.5);
+    color: var(--color-primary);
+}
+
+.subtitle {
+    font-size: 1.4rem;
+    color: var(--color-text-dark);
+    margin-bottom: 50px;
+}
+
+.cta-button {
+    background-color: var(--color-secondary);
+    border: 2px solid var(--color-secondary);
+    color: var(--color-text);
+    padding: 15px 30px; 
+    border-radius: 5px;
+    display: inline-block;
+    transition: all 0.3s ease;
+    font-size: 1.1rem;
+}
+
+.cta-button:hover {
+    background-color: var(--color-primary);
+    border-color: var(--color-primary);
+    color: var(--color-bg-body);
+}
+
+/* ------------------------------------------- */
+/* 5. قسم نبذة عن الفرقة (About Section) */
+/* ------------------------------------------- */
+.about-content {
+    display: flex; 
+    flex-direction: row-reverse;
+    gap: 40px;
+    align-items: flex-start;
+    padding: 30px 0;
+}
+
+.about-image-side {
+    flex: 1; 
+    min-width: 300px;
+}
+
+.team-photo {
+    width: 100%;
+    height: auto;
+    border-radius: var(--border-radius); 
+    box-shadow: var(--shadow-sm);
+    border: 3px solid var(--color-primary);
+}
+
+.about-text-side {
+    flex: 2; 
+    font-size: 1.1rem;
+    line-height: 1.8;
+}
+
+.about-vision {
+    margin-top: 25px;
+    padding: 15px;
+    background-color: var(--color-bg-light); 
+    border-right: 5px solid var(--color-secondary); 
+    border-radius: 4px;
+}
+
+.read-more-link {
+    display: inline-block;
+    margin-top: 20px;
+    font-weight: bold;
+    border-bottom: 1px solid var(--color-secondary);
+}
+
+/* ------------------------------------------- */
+/* 6. قسم الأعمال (Works Section) */
+/* ------------------------------------------- */
+.works-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-bottom: 50px;
+    width: 100%; 
+}
+
+.work-card {
+    background-color: var(--color-bg-card);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    border-top: 4px solid var(--color-secondary);
+    display: flex;
+    flex-direction: column;
+}
+
+.work-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 35px rgba(230, 184, 0, 0.3);
+}
+
+.card-image-wrapper {
+    height: 220px;
+    overflow: hidden;
+}
+
+.card-image-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.work-card:hover .card-image-wrapper img {
+    transform: scale(1.05);
+}
+
+.card-content {
+    padding: 20px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.card-title {
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+    color: var(--color-primary);
+}
+
+.card-summary {
+    color: var(--color-text-dark);
+    font-size: 0.95rem;
+    margin-bottom: 15px;
+    flex-grow: 1;
+}
+
+.card-meta {
+    border-top: 1px solid var(--color-border);
+    padding-top: 10px;
+    font-size: 0.85rem;
+    color: var(--color-text-dark);
+}
+
+.view-all-button {
+    display: block;
+    width: fit-content;
+    margin: 40px auto 0;
+    padding: 12px 40px;
+    text-align: center;
+    border: 2px solid var(--color-primary);
+    color: var(--color-primary);
+    border-radius: 50px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.view-all-button:hover {
+    background-color: var(--color-primary);
+    color: var(--color-bg-body);
+}
+
+/* ------------------------------------------- */
+/* 7. قسم الرحلة الزمنية (Timeline) - مصحح */
+/* ------------------------------------------- */
+.timeline-section {
+    background-color: var(--color-bg-light); 
+    padding: 80px 0; 
+    text-align: center; 
+    position: relative;
+}
+
+.timeline-container {
+    position: relative;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+/* الخط العمودي المركزي */
+.timeline-container::after {
+    content: '';
+    position: absolute;
+    width: 4px;
+    background-color: var(--color-secondary); 
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    margin-left: -2px; /* لتوسيط الخط */
+}
+
+/* العنصر الواحد */
+.timeline-item {
+    padding: 10px 40px;
+    position: relative;
+    width: 50%; 
+    opacity: 0;
+    transition: all 0.6s ease;
+}
+
+.timeline-item.visible {
+    opacity: 1;
+}
+
+/* العناصر على اليمين (الفردية) */
+.timeline-item.right {
+    left: 50%;
+    text-align: right; /* المحتوى محاذى لليمين */
+}
+
+/* العناصر على اليسار (الزوجية) */
+.timeline-item.left {
+    left: 0;
+    text-align: left; /* المحتوى محاذى لليسار */
+}
+
+/* الدوائر على الخط */
+.timeline-item::after {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    right: -10px; /* للجانب الأيسر */
+    background-color: var(--color-bg-body);
+    border: 4px solid var(--color-primary);
+    top: 25px;
+    border-radius: 50%;
+    z-index: 1;
+}
+
+/* تصحيح مكان الدائرة للعناصر اليمنى */
+.timeline-item.right::after {
+    left: -10px;
+    right: auto;
+}
+/* تصحيح مكان الدائرة للعناصر اليسرى */
+.timeline-item.left::after {
+    right: -10px;
+    left: auto;
+}
+
+/* محتوى البطاقة */
+.timeline-content {
+    padding: 20px 30px;
+    background-color: var(--color-bg-card);
+    position: relative;
+    border-radius: 6px;
+    box-shadow: var(--shadow-sm);
+}
+
+/* الأسهم */
+.timeline-content::before {
+    content: " ";
+    height: 0;
+    position: absolute;
+    top: 22px;
+    width: 0;
+    z-index: 1;
+    border: medium solid white;
+}
+
+/* سهم اليسار */
+.timeline-item.left .timeline-content::before {
+    right: -10px;
+    border-width: 10px 0 10px 10px;
+    border-color: transparent transparent transparent var(--color-bg-card);
+}
+
+/* سهم اليمين */
+.timeline-item.right .timeline-content::before {
+    left: -10px;
+    border-width: 10px 10px 10px 0;
+    border-color: transparent var(--color-bg-card) transparent transparent;
+}
+
+
+/* ------------------------------------------- */
+/* 8. التذييل (Footer) */
+/* ------------------------------------------- */
+.footer {
+    background-color: var(--color-bg-light); 
+    padding: 40px 5%;
+    text-align: center;
+    border-top: 1px solid var(--color-border); 
+}
+
+.footer-content {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+}
+
+.footer-col {
+    max-width: 400px;
+}
+
+.footer h4 {
+    margin-bottom: 15px;
+    color: var(--color-primary);
+}
+
+.footer ul {
+    list-style: none;
+}
+
+.footer ul li {
+    margin-bottom: 10px;
+    color: var(--color-text-dark);
+}
+
+.footer ul li i {
+    color: var(--color-secondary);
+    margin-left: 10px;
+}
+
+.footer-bottom {
+    border-top: 1px solid var(--color-border);
+    padding-top: 20px;
+    font-size: 0.9rem;
+    color: var(--color-text-dark);
+}
+
+.social-links {
+    margin-top: 10px;
+}
+
+.social-links a {
+    color: var(--color-text);
+    font-size: 1.2rem;
+    margin: 0 10px;
+    transition: color 0.3s;
+}
+
+.social-links a:hover {
+    color: var(--color-primary);
+}
+
+/* حركات الظهور (Fade In) */
+.fade-in {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.6s ease-out;
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+/* ------------------------------------------- */
+/* 9. إصلاحات الوضع النهاري (Light Mode) */
+/* ------------------------------------------- */
+body.light-mode {
+    --color-bg-body: #FFFFFF;
+    --color-bg-card: #F8F8F8;
+    --color-bg-light: #F0F0F0;
+    --color-text: #333333;
+    --color-text-dark: #555555;
+    --color-border: #DDDDDD;
+    --shadow-sm: 0 2px 5px rgba(0, 0, 0, 0.1);
+    
+    color: var(--color-text);
+}
+
+body.light-mode .navbar {
+    background-color: rgba(255, 255, 255, 0.95);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+body.light-mode .dropdown-content {
+    background-color: #FFF;
+    border-color: #EEE;
+}
+
+body.light-mode .lang-option:hover {
+    background-color: #F5F5F5;
+}
+
+body.light-mode .timeline-content,
+body.light-mode .work-card,
+body.light-mode .news-ticker-section {
+    background-color: #FFF;
+    border-color: #EEE;
+}
+
+body.light-mode .timeline-item.left .timeline-content::before {
+    border-color: transparent transparent transparent #FFF;
+}
+body.light-mode .timeline-item.right .timeline-content::before {
+    border-color: transparent #FFF transparent transparent;
+}
+
+
+/* ------------------------------------------- */
+/* 10. استجابة الشاشات الصغيرة (Media Queries) */
+/* ------------------------------------------- */
+
+/* إخفاء زر القائمة في الديسكتوب */
+.nav-toggle { display: none; }
+
+/* ⚠️ التعديل 1: تقليل عرض الحاوية للتايم لاين لتناسب الشاشات المتوسطة */
+@media (max-width: 1100px) {
+    .timeline-container {
+        max-width: 90%; /* بدلاً من 1000px ثابتة */
+    }
+    .timeline-item {
+        padding: 10px 20px; /* تقليل الحواف الداخلية لتقريب الخلايا من الخط */
+    }
+}
+
+/* ⚠️ التعديل 2: تغيير نقطة التحول من 900px إلى 700px */
+/* هذا سيجعل الخط في المنتصف (يمين/يسار) يظهر حتى على الشاشات المتوسطة */
+@media (max-width: 700px) {
+    .main-title { font-size: 3rem; }
+    
+    .about-content {
+        flex-direction: column; 
+        align-items: center;
+    }
+    
+    .about-image-side { width: 100%; }
+
+    /* --- Timeline Mobile (خط على الجانب) --- */
+    .timeline-container::after {
+        left: 31px; 
+        margin-left: 0; /* إزالة التوسط */
+    }
+    
+    .timeline-item {
+        width: 100%;
+        padding-left: 70px;
+        padding-right: 25px;
+    }
+    
+    .timeline-item::after {
+        left: 21px; 
+    }
+    
+    /* إلغاء تنسيق اليمين/اليسار وجعل الكل محاذاة لليمين */
+    .timeline-item.left, .timeline-item.right {
+        left: 0;
+        text-align: right; 
+    }
+    
+    .timeline-item.left .timeline-content::before,
+    .timeline-item.right .timeline-content::before {
+        right: -10px;
+        left: auto;
+        border-width: 10px 0 10px 10px;
+        border-color: transparent transparent transparent var(--color-bg-card);
+    }
+    
+    body.light-mode .timeline-item.left .timeline-content::before,
+    body.light-mode .timeline-item.right .timeline-content::before {
+        border-color: transparent transparent transparent #FFF;
+    }
+
+    /* --- Navbar Mobile --- */
+    .nav-toggle {
+        display: block;
+        background: none;
+        border: none;
+        color: var(--color-text);
+        font-size: 1.5rem;
+        cursor: pointer;
+    }
+
+    .navbar nav {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 80px;
+        right: 0;
+        width: 100%;
+        background-color: var(--color-bg-card);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+        padding: 20px 0;
+    }
+
+    .navbar nav.active {
+        display: flex;
+    }
+
+    .navbar nav a {
+        padding: 10px 20px;
+        border-bottom: 1px solid var(--color-border);
+        margin: 0;
+        width: 100%;
+        text-align: center;
+    }
+}
+
+
+
+
+@media (max-width: 600px) {
+    .utility-controls {
+        gap: 5px;
+    }
+    .logo h1 {
+        font-size: 1.1rem;
+    }
+    .logo-img {
+        height: 32px;
+    }
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+    }
+    .footer-col {
+        width: 100%;
+        max-width: 100%;
+    }
+}
+/* ====== TIMELINE FIX: استبدل قسم التايملاين بهذا الكود ====== */
+
+.timeline-section {
+    background-color: var(--color-bg-light);
+    padding: 80px 0;
+    text-align: center;
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+
+/* الحاوية (نجعلها LTR لتعمل خصائص left/right متوقعة)
+   لكن محتوى البطاقة يبقى RTL لقراءة عربية صحيحة */
+.timeline-container {
+    position: relative;
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+    direction: ltr; /* مهم: يحل مشكلات الإزاحة الناتجة عن صفحة RTL */
+}
+
+/* الخط العمودي بالمنتصف */
+.timeline-container::after {
+    content: '';
+    position: absolute;
+    width: 4px;
+    background-color: var(--color-secondary);
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 0;
+}
+
+/* العنصر الواحد: نترك عرض لكل جانب مع مسافة صغيرة */
+.timeline-item {
+    position: relative;
+    width: calc(50% - 40px); /* اترك 40px كـ gap عن الخط */
+    padding: 10px 20px;
+    opacity: 0;
+    transition: all 0.6s ease, transform 0.6s ease;
+    box-sizing: border-box;
+    z-index: 2; /* فوق الخط */
+}
+
+/* عندما يصبح ظاهر */
+.timeline-item.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* عنصر على اليسار (جانب الصفحة الأيسر بالنسبة للـ container) */
+.timeline-item.left {
+    left: 0;
+    text-align: right; /* محتوى البطاقة للغة العربية يكون محاذياً لليمين */
+}
+
+/* عنصر على اليمين */
+.timeline-item.right {
+    left: calc(50% + 40px); /* يبدأ بعد منتصف الحاوية مع نفس الهامش (40px) */
+    text-align: left;
+}
+
+/* دائـرة النقطة: نركّزها دائماً على خط المنتصف */
+.timeline-item::after {
+    content: '';
+    position: absolute;
+    top: 28px; /* اضبط ارتفاع النقطة حسب حجم البطاقة */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 20px;
+    height: 20px;
+    background-color: var(--color-bg-body);
+    border: 4px solid var(--color-primary);
+    border-radius: 50%;
+    z-index: 3;
+}
+
+/* محتوى البطاقة: نص عربي يبقى RTL */
+.timeline-content {
+    padding: 18px 22px;
+    background-color: var(--color-bg-card);
+    position: relative;
+    border-radius: 6px;
+    box-shadow: var(--shadow-sm);
+    direction: rtl; /* الحفاظ على اتجاه النص داخل البطاقة */
+}
+
+/* الأسهم الصغيرة التي تشير إلى الخط المركزي */
+/* لأقسام اليسار: السهم على اليمين يشير نحو الخط */
+.timeline-item.left .timeline-content::before {
+    content: " ";
+    position: absolute;
+    top: 22px;
+    right: -10px;
+    border-width: 10px 0 10px 10px;
+    border-style: solid;
+    border-color: transparent transparent transparent var(--color-bg-card);
+    z-index: 2;
+}
+
+/* لأقسام اليمين: السهم على اليسار */
+.timeline-item.right .timeline-content::before {
+    content: " ";
+    position: absolute;
+    top: 22px;
+    left: -10px;
+    border-width: 10px 10px 10px 0;
+    border-style: solid;
+    border-color: transparent var(--color-bg-card) transparent transparent;
+    z-index: 2;
+}
+
+/* تحسين استجابة الشاشات الصغيرة: تحوّل لعرض عمودي */
+@media (max-width: 700px) {
+    .timeline-container {
+        left: 0;
+        max-width: 100%;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .timeline-container::after {
+        left: 30px;
+        transform: none;
+    }
+
+    .timeline-item {
+        width: 100%;
+        padding-left: 70px;
+        padding-right: 20px;
+        left: 0 !important;
+    }
+
+    .timeline-item::after {
+        left: 30px;
+        transform: none;
+    }
+
+    .timeline-item.left .timeline-content::before,
+    .timeline-item.right .timeline-content::before {
+        /* الكل يصبح سهمًا من اليسار في العرض العمودي */
+        left: 20px;
+        right: auto;
+        border-width: 10px 0 10px 10px;
+        border-color: transparent transparent transparent var(--color-bg-card);
+    }
+
+    .timeline-content { text-align: right; }
+}
+/* ... (كود CSS الموجود لديك) ... */
+
+/* ------------------------------------------- */
+/* 7. تنسيقات بطاقات الأعمال (Work Card) (افتراضية) */
+/* ------------------------------------------- */
+.works-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    padding: 0 5%;
+}
+
+.work-card {
+    display: block;
+    background-color: var(--color-bg-card);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-sm);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid var(--color-border);
+    height: 100%; /* لضمان ارتفاع متساوٍ في الشبكة */
+}
+
+.work-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-md);
+}
+
+.card-image-wrapper {
+    height: 200px;
+    overflow: hidden;
+}
+
+.card-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.work-card:hover .card-image {
+    transform: scale(1.05);
+}
+
+.card-content {
+    padding: 20px;
+    /* لجعل المحتوى يمتد لأسفل إذا كانت البطاقة ممتدة بسبب height: 100% */
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.card-title {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: var(--color-primary);
+}
+
+.card-summary {
+    color: var(--color-text-dark);
+    font-size: 0.95rem;
+    margin-bottom: 15px;
+    /* تحديد عدد أسطر الملخص في العرض العادي */
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    flex-grow: 1; /* للسماح للملخص بأخذ المساحة المتبقية */
+}
+
+.card-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.85rem;
+    color: var(--color-text-dark);
+    margin-top: auto; /* لدفعه إلى أسفل البطاقة */
+}
+.card-meta i {
+    margin-left: 5px;
+    color: var(--color-secondary);
+}
+
+/* تنسيق وسم الأعمال العادية (Festival Work Only) */
+.archive-tag.archive-festival-only {
+    background-color: var(--color-secondary);
+    color: var(--color-bg-card);
+    padding: 3px 8px;
+    border-radius: 4px;
+    font-weight: bold;
+    font-size: 0.75rem;
+}
+
+
+/* ------------------------------------------- */
+/* 8. تنسيق الأرشيف المميز (Archive Layout) */
+/* ------------------------------------------- */
+.archive-list-container {
+    display: flex;
+    flex-direction: column;
+    gap: 40px; 
+    padding: 0 5%;
+}
+
+.archive-card {
+    /* تنسيق عرضي (أرشيفي) */
+    display: flex;
+    flex-direction: row; 
+    align-items: stretch;
+    width: 100%;
+    padding: 0; 
+    background-color: var(--color-bg-light); 
+    border: 2px solid var(--color-primary); 
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-md);
+    overflow: hidden;
+}
+
+/* تنسيق الصورة في الوضع الأرشيفي */
+.archive-card .card-image-wrapper {
+    width: 350px; /* عرض ثابت للصورة */
+    height: auto;
+    flex-shrink: 0;
+    margin: 0;
+    /* لإلغاء نصف الدائرة إذا كانت موجودة في التنسيق العادي */
+    border-radius: var(--border-radius) 0 0 var(--border-radius); 
+}
+
+/* تنسيق المحتوى في الوضع الأرشيفي */
+.archive-card .card-content {
+    flex-grow: 1; 
+    padding: 30px; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.archive-card .card-title {
+    font-size: 2rem;
+    color: var(--color-secondary);
+    margin-bottom: 15px;
+}
+
+.archive-card .card-summary {
+    color: var(--color-text);
+    font-size: 1rem;
+}
+
+/* تنسيق وسم الأرشيف المميز (Festival AND Ticker) */
+.archive-tag.archive-festival-ticker {
+    background-color: var(--color-primary);
+    color: var(--color-bg-body);
+    padding: 5px 10px;
+    border-radius: 50px;
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+
+/* ------------------------------------------- */
+/* 9. استجابة الشاشات الصغيرة لتنسيق الأرشيف */
+/* ------------------------------------------- */
+@media (max-width: 900px) {
+    /* تحويل البطاقة الأرشيفية من أفقي إلى عمودي */
+    .archive-card {
+        flex-direction: column; 
+        align-items: center;
+    }
+    
+    .archive-card .card-image-wrapper {
+        width: 100%;
+        height: 250px;
+        border-radius: var(--border-radius) var(--border-radius) 0 0;
+    }
+    
+    .archive-card .card-content {
+        padding: 20px;
+        text-align: center;
+    }
+
+    .archive-card .card-meta {
+        justify-content: center;
+        gap: 20px;
+    }
+
+    /* تقليل حجم الخطوط للعرض الأرشيفي في الشاشات الصغيرة */
+    .archive-card .card-title {
+        font-size: 1.6rem;
+    }
+}
+/* /frontend/style/style.css */
+
+/* --- تنسيق قسم الفريق (Team Section) --- */
+.team-grid {
+    display: grid;
+    /* عرض 3 أعضاء في الصف في الشاشات الكبيرة */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
+    gap: 30px;
+    padding: 20px 0;
+}
+
+.team-member {
+    background-color: var(--color-bg-card); /* خلفية داكنة للبطاقة */
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    text-align: center;
+    padding: 20px;
+    box-shadow: var(--shadow-sm);
+    transition: transform 0.3s ease;
+}
+
+.team-member:hover {
+    transform: translateY(-5px); /* تأثير خفيف عند المرور */
+    box-shadow: var(--shadow-md);
+}
+
+.member-photo {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 50%; /* لجعل الصورة دائرية */
+    border: 3px solid var(--color-primary); /* إطار بلون مميز */
+    margin-bottom: 15px;
+}
+
+.member-name {
+    color: var(--color-primary); /* اسم العضو باللون الأساسي */
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 5px;
+}
+
+.member-role {
+    color: var(--color-text-dark); /* الدور بلون ثانوي */
+    font-size: 1rem;
+    font-weight: 400;
+    margin: 0;
+}
+
+/* تنسيق الحاوية الرئيسية في HTML */
+#team-container {
+    /* يجب استبدالها بـ .team-grid أو إضافة الكلاس مباشرة في HTML */
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
+    gap: 30px;
+}

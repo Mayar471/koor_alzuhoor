@@ -1,0 +1,82 @@
+/* تنسيقات خاصة بمعرض الصور في صفحة add_work.html */
+
+/* حاوية معاينات الصور الإضافية (Grid) */
+.image-grid-wrapper {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); /* 120px كحد أدنى لحجم الصورة */
+    gap: 15px;
+    margin-top: 15px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+}
+
+/* حاوية المعاينة الفردية */
+.image-preview {
+    position: relative;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    transition: opacity 0.3s ease;
+}
+
+/* صورة الغلاف الحالية تكون أكبر */
+.cover-preview {
+    max-width: 250px; 
+    height: 150px;
+    margin-bottom: 15px;
+    display: block;
+}
+
+/* الصور داخل المعاينة */
+.image-preview img {
+    width: 100%;
+    height: 100px; /* ارتفاع ثابت للصور الإضافية */
+    object-fit: cover;
+    display: block;
+}
+.cover-preview img {
+    height: 100%;
+}
+
+/* زر الحذف/الإلغاء */
+.remove-btn {
+    position: absolute;
+    top: 5px;
+    left: 5px; /* أو right: 5px; إذا كان التصميم RTL صارم */
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    padding: 4px 8px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 10px;
+    line-height: 1;
+    z-index: 10;
+    transition: background-color 0.2s;
+}
+
+.remove-btn:hover {
+    background-color: #c0392b;
+}
+
+/* وسم الصورة (قديمة/جديدة) */
+.image-label {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+    color: white;
+    font-size: 10px;
+    padding: 2px 5px;
+    border-top-right-radius: 4px;
+}
+
+/* تأثير الصورة المحذوفة */
+.image-preview.deleted {
+    opacity: 0.3;
+    filter: grayscale(100%);
+    border-color: #e74c3c;
+}

@@ -1,0 +1,80 @@
+// /frontend/admin/team.html
+
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>لوحة التحكم | إدارة فريق العمل</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <div class="main-wrapper">
+        <header class="admin-header">
+            <div class="logo-area">
+                <img src="logo.jpg" alt="فرقة كور الزهور المسرحية" class="site-logo">
+            </div>
+            <div class="welcome-area">
+                مرحباً بك، <span id="admin-name">المدير</span>
+            </div>
+            <div class="header-actions">
+                <a href="#" id="logout-btn" class="nav-action-btn"><i class="fas fa-sign-out-alt"></i> تسجيل الخروج</a>
+            </div>
+        </header>
+
+        <nav class="admin-nav">
+            <div class="nav-section-title"><i class="fas fa-tools"></i> الإجراءات</div>
+            <a href="index.html" id="manage-team-link" class="nav-link active"><i class="fas fa-users-cog"></i>   العودة للرئيسية</a>
+        </nav>
+
+        <main class="admin-content">
+
+            <h1 id="content-title"><i class="fas fa-users-cog"></i> إدارة فريق العمل</h1>
+            <div id="status-message-team" class="status-message" style="display: none;"></div>
+            <div class="loading-spinner" id="loading-spinner" style="display: none;">
+                <i class="fas fa-spinner fa-spin"></i> جارٍ تحميل أعضاء الفريق...
+            </div>
+
+            <div class="posts-table-container">
+                <table id="team-table" class="data-table">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>الاسم</th>
+                            <th>الدور/المنصب</th>
+                            <th>الإجراءات</th>
+                        </tr>
+                    </thead>
+                    <tbody id="team-list">
+                        </tbody>
+                </table>
+            </div>
+
+            <div id="add-member-form-card" class="form-card" style="margin-top: 30px;">
+                <h2><i class="fas fa-user-plus"></i> إضافة عضو جديد</h2>
+                <form id="add-member-form">
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="member-name">اسم العضو (إلزامي)</label>
+                            <input type="text" id="member-name" name="name" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="member-role">دور العضو/منصبه</label>
+                            <input type="text" id="member-role" name="role" class="form-control">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <button type="submit" id="submit-member-btn" class="primary-action-btn submit-btn"><i class="fas fa-save"></i> حفظ العضو</button>
+                    </div>
+                </form>
+            </div>
+
+
+        </main>
+    </div>
+
+    <script src="./js/team.js"></script>
+</body>
+</html>

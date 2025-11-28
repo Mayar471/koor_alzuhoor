@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>إضافة منشور جديد | كور الزهور</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/add.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <div class="main-wrapper">
+        <header class="admin-header">
+            <div class="logo-area">
+                <img src="logo.jpg" alt="فرقة كور الزهور المسرحية" class="site-logo">
+            </div>
+            <div class="welcome-area">
+                مرحباً بك، <span id="admin-name">المدير</span>
+            </div>
+            <div class="header-actions">
+                <a href="#" id="logout-btn" class="nav-action-btn"><i class="fas fa-sign-out-alt"></i> تسجيل الخروج</a>
+            </div>
+        </header>
+
+        <nav class="admin-nav">
+            <div class="nav-section-title"><i class="fas fa-tools"></i> الإجراءات</div>
+            <a href="index.html" class="nav-link"><i class="fas fa-arrow-right-to-bracket"></i> العودة لقائمة المنشورات</a>
+            
+            <div class="nav-section-title mt-3"><i class="fas fa-filter"></i> تصفية المنشورات</div>
+            <a href="index.html" class="nav-link" data-filter="all"><i class="fas fa-list-ul"></i> المنشورات العامة</a>
+            <a href="index.html" class="nav-link" data-filter="featured"><i class="fas fa-star"></i> أهم الأعمال</a>
+            <a href="index.html" class="nav-link" data-filter="festival"><i class="fas fa-masks-theater"></i> منشورات مهرجان الماغوط</a>
+            <a href="index.html" class="nav-link" data-filter="news"><i class="fas fa-newspaper"></i> آخر الأخبار</a>
+            <a href="index.html" class="nav-link" data-filter="timeline"><i class="fas fa-history"></i> منشورات الخط الزمني</a>
+            <a href="index.html" class="nav-link" data-filter="ticker"><i class="fas fa-ticker"></i> الأرشيف</a>
+            <a href="index.html" class="nav-link" data-filter="article"><i class="fas fa-article"></i> المقالات</a>
+
+        </nav>
+
+        <main class="admin-content">
+            <h1 id="page-title"><i class="fas fa-plus-circle"></i> إضافة منشور جديد</h1>
+
+            <div id="status-message" class="status-message" style="display: none;"></div>
+
+            <form id="work-form" class="form-card">
+                
+                <div class="lang-tabs-container">
+                    <div class="lang-tabs">
+                        <button type="button" class="tab-btn active" data-lang="ar"><i class="fas fa-globe"></i> العربية (الرئيسية)</button>
+                        <button type="button" class="tab-btn" data-lang="en"><i class="fas fa-language"></i> الإنجليزية</button>
+                        <button type="button" class="tab-btn" data-lang="de"><i class="fas fa-language"></i> الألمانية</button>
+                    </div>
+
+                    <div id="content-ar" class="tab-content active" dir="rtl">
+                        <div class="form-group">
+                            <label for="title_ar">العنوان بالعربية *</label>
+                            <input type="text" id="title_ar" name="title_ar" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="summary_ar">الملخص بالعربية (يظهر في القوائم)</label>
+                            <textarea id="summary_ar" name="summary_ar" class="form-control" rows="3"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="content_ar">المحتوى التفصيلي بالعربية</label>
+                            <textarea id="content_ar" name="content_ar" class="form-control" rows="8"></textarea>
+                        </div>
+                    </div>
+
+                    <div id="content-en" class="tab-content" dir="ltr">
+                        <div class="form-group">
+                            <label for="title_en">Title in English</label>
+                            <input type="text" id="title_en" name="title_en" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label for="summary_en">Summary in English (for lists)</label>
+                            <textarea id="summary_en" name="summary_en" class="form-control" rows="3"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="content_en">Detailed Content in English</label>
+                            <textarea id="content_en" name="content_en" class="form-control" rows="8"></textarea>
+                        </div>
+                    </div>
+                    
+                    <div id="content-de" class="tab-content" dir="ltr">
+                        <div class="form-group">
+                            <label for="title_de">Titel auf Deutsch</label>
+                            <input type="text" id="title_de" name="title_de" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label for="summary_de">Zusammenfassung auf Deutsch</label>
+                            <textarea id="summary_de" name="summary_de" class="form-control" rows="3"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="content_de">Detaillierter Inhalt auf Deutsch</label>
+                            <textarea id="content_de" name="content_de" class="form-control" rows="8"></textarea>
+                        </div>
+                    </div>
+                </div>
+
+                <hr class="form-divider">
+
+                <h2><i class="fas fa-cogs"></i> إعدادات المنشور والتصنيف</h2>
+                
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="production_year">سنة الإنتاج/العرض (اختياري)</label>
+                        <input type="number" id="production_year" name="production_year" class="form-control" min="1950" max="2100" placeholder="مثال: 2024">
+                    </div>
+                    <div class="form-group">
+                        <label for="publication_date">تاريخ النشر (المحدد في الموقع)</label>
+                        <input type="date" id="publication_date" name="publication_date" class="form-control">
+                    </div>
+                </div>
+
+                <div class="checkbox-group">
+                    <label class="checkbox-label">تصنيفات المنشور:</label>
+                    <div class="checkbox-wrapper">
+                        <input type="checkbox" id="is_featured" name="is_featured" value="1">
+                        <label for="is_featured">عمل مميز/رئيسي (<span class="tag tag-featured">مميز</span>)</label>
+                    </div>
+                    <div class="checkbox-wrapper">
+                        <input type="checkbox" id="is_festival_work" name="is_festival_work" value="1">
+                        <label for="is_festival_work">منشور مهرجان الماغوط (<span class="tag tag-festival">مهرجان</span>)</label>
+                    </div>
+                    <div class="checkbox-wrapper">
+                        <input type="checkbox" id="is_news" name="is_news" value="1">
+                        <label for="is_news">منشور أخبار (<span class="tag tag-news">خبر</span>)</label>
+                    </div>
+                    <div class="checkbox-wrapper">
+                        <input type="checkbox" id="is_timeline_event" name="is_timeline_event" value="1">
+                        <label for="is_timeline_event">حدث على الخط الزمني (<span class="tag tag-timeline">حدث زمني</span>)</label>
+                    </div>
+                      <div class="checkbox-wrapper">
+                        <input type="checkbox" id="is_ticker" name="is_ticker" value="1">
+                        <label for="is_ticker">  أرشيف(<span class="tag tag-ticker">وثيقة </span>)</label>
+                    </div>
+                    <div class="checkbox-wrapper">
+                        <input type="checkbox" id="is_article" name="is_article" value="1">
+                        <label for="is_article">  مقالات(<span class="tag tag-article">مقال </span>)</label>
+                    </div>
+                </div>
+
+                <hr class="form-divider">
+
+                <h2><i class="fas fa-share-alt"></i> روابط النشر</h2>
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="facebook_link">رابط منشور الفيسبوك</label>
+                        <input type="url" id="facebook_link" name="facebook_link" class="form-control" placeholder="https://www.facebook.com/post/...">
+                    </div>
+                    <div class="form-group">
+                        <label for="instagram_link">رابط منشور الإنستجرام</label>
+                        <input type="url" id="instagram_link" name="instagram_link" class="form-control" placeholder="https://www.instagram.com/p/...">
+                    </div>
+                </div>
+
+<hr class="form-divider">
+
+                <h2><i class="fas fa-images"></i> صور المنشور ومعرض الصور</h2>
+                
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="coverImage">صورة الغلاف (ملف واحد)</label>
+                        <input type="file" id="coverImage" name="coverImage" accept="image/*" class="form-control-file">
+                    </div>
+                    <div id="cover-image-preview-container" class="image-preview-wrapper mb-3">    </div>
+                    <div class="form-group">
+                        <label for="additionalImages">صور إضافية للمعرض (ملفات متعددة)</label>
+                        <input type="file" id="additionalImages" name="additionalImages" accept="image/*" class="form-control-file" multiple>
+                    </div>
+                    <div id="additional-images-preview-container" class="image-grid-wrapper mb-3">
+    </div>
+                </div>
+
+                <button type="submit" id="submit-btn" class="submit-btn primary-action-btn mt-3">
+                    <i class="fas fa-save"></i> حفظ المنشور
+                </button>
+            </form>
+        </main>
+    </div>
+
+    <script src="./js/add_work.js"></script>
+</body>
+</html>

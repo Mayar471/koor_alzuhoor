@@ -1,0 +1,208 @@
+/* /frontend/admin/css/login.css */
+
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;700;900&display=swap');
+
+/* ======================================================= */
+/* 1. المتغيرات والألوان الأساسية (المأخوذة من style.css) */
+/* ======================================================= */
+:root {
+    --primary-red: #D22B2B;
+    --secondary-yellow: #F0DC00;
+    --dark-background: #121212;
+    --card-background: #1E1E1E;
+    --text-light: #F0F0F0;
+    --text-muted: #A0A0A0;
+    --error-color: #E74C3C;
+    --border-color: #333333; 
+    --border-highlight: #F0DC00;
+    --border-radius: 12px; /* جعل الحدود أكثر استدارة */
+    --shadow: 0 8px 30px rgba(0, 0, 0, 0.9); /* ظل أعمق */
+}
+
+/* ======================================================= */
+/* 2. الإعدادات العامة وتوحيد الخط */
+/* ======================================================= */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Cairo', sans-serif;
+    background-color: var(--dark-background);
+    color: var(--text-light);
+    direction: rtl; 
+    text-align: right;
+    min-height: 100vh;
+}
+
+/* ======================================================= */
+/* 3. تنسيق بطاقة تسجيل الدخول والتوسيط (LOGIN PAGE) */
+/* ======================================================= */
+.login-container {
+    min-height: 100vh; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    /* إضافة خلفية داكنة خفيفة لإبراز الكارد */
+    background: radial-gradient(circle at center, rgba(30, 30, 30, 0.95) 0%, rgba(18, 18, 18, 1) 100%);
+}
+
+.login-card {
+    background-color: var(--card-background);
+    padding: 40px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    text-align: center;
+    border: 2px solid var(--border-color); /* حد أوضح */
+    width: 100%;
+    max-width: 420px;
+    /* إضافة تأثير بسيط عند التحميل */
+    animation: fadeIn 0.8s ease-out;
+}
+
+/* 4. الرأس */
+.login-card h2 {
+    color: var(--secondary-yellow);
+    margin-bottom: 5px;
+    font-size: 2.2rem;
+    font-weight: 900;
+    letter-spacing: 1px;
+}
+
+.login-card h3 {
+    color: var(--text-muted);
+    margin-bottom: 35px;
+    font-size: 1.2rem;
+    font-weight: 400;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 15px;
+}
+
+/* 5. الحقول والأزرار */
+.form-group {
+    margin-bottom: 25px; /* زيادة المسافة بين الحقول */
+    text-align: right;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 700;
+    color: var(--text-light);
+    font-size: 1rem;
+}
+
+.form-control {
+    width: 100%;
+    padding: 14px; /* زيادة حجم البادينغ */
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    font-size: 1rem;
+    color: var(--text-light);
+    background-color: var(--dark-background); 
+    transition: all 0.3s; /* انتقال سلس لجميع التأثيرات */
+    font-family: 'Cairo', sans-serif;
+}
+
+/* 💡 تحسين تأثير التركيز */
+.form-control:focus {
+    border-color: var(--border-highlight);
+    box-shadow: 0 0 0 3px rgba(240, 220, 0, 0.25); /* ظل خارجي أكثر احترافية */
+    outline: none;
+    background-color: #1a1a1a;
+}
+
+#login-btn {
+    width: 100%;
+    padding: 15px;
+    background-color: var(--primary-red);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s;
+    margin-top: 15px;
+    display: flex; /* لدمج الـ Spinner */
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden; /* لإخفاء الزيادات */
+}
+
+#login-btn:hover {
+    background-color: #A02222; 
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(210, 43, 43, 0.4);
+}
+
+#login-btn:disabled {
+    background-color: var(--border-color);
+    cursor: not-allowed;
+    color: var(--text-muted);
+    transform: none;
+    box-shadow: none;
+}
+
+/* 6. رسائل الأخطاء */
+.error-message {
+    color: var(--error-color);
+    text-align: center;
+    margin-top: 15px;
+    font-weight: 700;
+    background-color: rgba(231, 76, 60, 0.1);
+    padding: 10px;
+    border-radius: 6px;
+    border: 1px solid var(--error-color);
+    display: none; /* يتم إظهاره بالـ JS */
+}
+
+/* 7. زر العين (PASSWORD TOGGLE) */
+.form-group.password-toggle {
+    position: relative;
+}
+
+.password-toggle .toggle-btn {
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: var(--text-muted);
+    z-index: 10;
+    transition: color 0.2s;
+    background: none;
+    border: none;
+    padding: 5px;
+}
+
+.password-toggle .toggle-btn:hover {
+    color: var(--primary-red); 
+}
+
+/* 8. تأثير التحميل (Spinner) */
+.spinner {
+    border: 3px solid rgba(255, 255, 255, 0.3);
+    border-top: 3px solid #FFF;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    animation: spin 1s linear infinite;
+    margin-right: 10px;
+    display: none;
+}
+
+/* 9. Keyframes (للحركات) */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}

@@ -1,0 +1,718 @@
+/* /frontend/admin/css/style.css (التنسيق الاحترافي الجديد) */
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;700;900&display=swap');
+
+/* ======================================================= */
+/* 1. المتغيرات والألوان الأساسية (CORE VARS) */
+/* ======================================================= */
+:root {
+    /* لوحة الألوان المستوحاة من اللوغو */
+    --primary-red: #D22B2B;        /* الأحمر الأساسي */
+    --secondary-yellow: #F0DC00;   /* الأصفر الأساسي */
+    --dark-background: #121212;    /* خلفية داكنة جداً (أغمق قليلاً من السابق) */
+    --card-background: #1E1E1E;    /* خلفية البطاقات/المناطق الرئيسية */
+    --sidebar-background: #242424; /* خلفية الشريط الجانبي */
+    --text-light: #F0F0F0;         /* نص فاتح جداً */
+    --text-muted: #A0A0A0;         /* نص خافت / ثانوي */
+    --error-color: #E74C3C;
+    --success-color: #2ECC71;
+    --border-color: #333333;       /* لون حدود داكن */
+    --border-highlight: #F0DC00;
+    --border-radius: 8px;
+    --shadow: 0 4px 12px rgba(0, 0, 0, 0.7); 
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Cairo', sans-serif;
+    background-color: var(--dark-background);
+    color: var(--text-light);
+    direction: rtl; 
+    text-align: right;
+    min-height: 100vh;
+}
+
+a {
+    text-decoration: none;
+    color: var(--primary-red);
+    transition: color 0.3s;
+}
+
+a:hover {
+    color: var(--secondary-yellow);
+}
+
+/* ======================================================= */
+/* 2. تنسيق بطاقة تسجيل الدخول (LOGIN PAGE) */
+/* ======================================================= */
+.login-body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.login-container {
+    width: 100%;
+    max-width: 420px;
+    padding: 20px;
+}
+
+.login-card {
+    background-color: var(--card-background);
+    padding: 40px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    text-align: center;
+    border: 1px solid var(--border-color);
+}
+
+.login-card h2 {
+    color: var(--secondary-yellow);
+    margin-bottom: 5px;
+    font-size: 2rem;
+    font-weight: 900;
+}
+
+.login-card h3 {
+    color: var(--text-muted);
+    margin-bottom: 35px;
+    font-size: 1.2rem;
+    font-weight: 400;
+}
+
+.form-group {
+    margin-bottom: 20px;
+    text-align: right;
+}
+
+.form-control {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    font-size: 1rem;
+    color: var(--text-light);
+    background-color: var(--dark-background); 
+    transition: border-color 0.3s, box-shadow 0.3s;
+    font-family: 'Cairo', sans-serif; /* لضمان خط عربي متناسق في الإدخال */
+}
+
+.form-control:focus {
+    border-color: var(--border-highlight);
+    box-shadow: 0 0 0 0.15rem rgba(240, 220, 0, 0.2); 
+    outline: none;
+    background-color: var(--card-background);
+}
+
+#login-btn {
+    width: 100%;
+    padding: 14px;
+    background-color: var(--primary-red);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+    margin-top: 15px;
+}
+
+#login-btn:hover {
+    background-color: #A02222; 
+    transform: translateY(-2px);
+}
+
+#login-btn:disabled {
+    background-color: var(--border-color);
+    cursor: not-allowed;
+    color: var(--text-muted);
+    transform: none;
+}
+
+.error-message {
+    color: var(--error-color);
+    text-align: center;
+    margin-top: 15px;
+    font-weight: 700;
+}
+
+/* ======================================================= */
+/* 3. تنسيق لوحة التحكم الرئيسية (MAIN LAYOUT) */
+/* ======================================================= */
+
+.main-wrapper {
+    display: grid;
+    /* تعريف المناطق: شريط جانبي (250px)، المحتوى الرئيسي (الباقي)، الرأس (عرض كامل) */
+    grid-template-columns: 260px 1fr; 
+    grid-template-rows: auto 1fr;
+    grid-template-areas: 
+        "header header"
+        "nav content";
+    min-height: 100vh;
+}
+
+/* الرأس (HEADER) */
+.admin-header {
+    grid-area: header;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    background-color: var(--sidebar-background); /* لون موحد مع الشريط الجانبي */
+    border-bottom: 1px solid var(--border-color);
+    box-shadow: var(--shadow);
+}
+
+.site-logo {
+    height: 40px; /* حجم اللوغو في الرأس */
+    width: auto;
+}
+
+.welcome-area {
+    font-size: 1rem;
+    color: var(--text-light);
+}
+
+#admin-name {
+    color: var(--secondary-yellow);
+    font-weight: 700;
+}
+
+.nav-action-btn {
+    color: var(--primary-red);
+    padding: 8px 15px;
+    border-radius: 6px;
+    font-size: 0.95rem;
+    font-weight: 700;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.nav-action-btn:hover {
+    background-color: var(--primary-red);
+    color: var(--text-light);
+}
+
+/* شريط التنقل الجانبي (NAV) */
+.admin-nav {
+    grid-area: nav;
+    background-color: var(--sidebar-background);
+    padding: 20px;
+    border-left: 1px solid var(--border-color);
+    overflow-y: auto; /* للسماح بالتمرير إذا كان المحتوى طويلاً */
+}
+
+.nav-section-title {
+    color: var(--secondary-yellow);
+    font-size: 0.9rem;
+    font-weight: 700;
+    padding: 10px 0;
+    border-bottom: 1px solid var(--border-color);
+    margin-top: 15px;
+    margin-bottom: 10px;
+}
+
+.nav-section-title i {
+    margin-left: 5px;
+}
+
+.nav-link {
+    display: block;
+    padding: 10px 15px;
+    margin: 5px 0;
+    color: var(--text-muted);
+    border-radius: 6px;
+    transition: background-color 0.3s, color 0.3s;
+    font-size: 1rem;
+    font-weight: 400;
+}
+
+.nav-link:hover,
+.nav-link.active {
+    background-color: rgba(240, 220, 0, 0.1); /* خلفية صفراء خفيفة عند التمرير أو التفعيل */
+    color: var(--text-light);
+}
+
+.nav-link.active {
+    border-right: 3px solid var(--secondary-yellow); /* شريط التحديد باللون الأصفر */
+    font-weight: 700;
+}
+
+.nav-link i {
+    margin-left: 10px;
+}
+
+/* زر الإضافة الأساسي */
+.primary-action-btn {
+    background-color: var(--primary-red);
+    color: white !important;
+    font-weight: 700;
+    padding: 12px 15px;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.primary-action-btn:hover {
+    background-color: #A02222;
+    color: white !important;
+}
+
+/* صندوق البحث */
+.search-box {
+    display: flex;
+    gap: 5px;
+    margin-bottom: 15px;
+}
+
+.search-box .form-control {
+    flex-grow: 1;
+    border-radius: 6px;
+    background-color: var(--card-background);
+    padding: 8px;
+    font-size: 0.9rem;
+}
+
+.search-btn {
+    padding: 8px 12px;
+    background-color: var(--secondary-yellow);
+    color: var(--dark-background);
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.search-btn:hover {
+    background-color: #DDAA00;
+}
+
+/* منطقة المحتوى الرئيسية (CONTENT) */
+.admin-content {
+    grid-area: content;
+    padding: 30px;
+    background-color: var(--dark-background);
+}
+
+#content-title {
+    color: var(--text-light);
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 30px;
+    border-bottom: 2px solid var(--primary-red);
+    padding-bottom: 10px;
+    display: inline-block;
+}
+
+/* مؤشر التحميل */
+.loading-spinner {
+    text-align: center;
+    padding: 40px;
+    font-size: 1.2rem;
+    color: var(--text-muted);
+}
+
+.loading-spinner i {
+    color: var(--secondary-yellow);
+    font-size: 1.8rem;
+    margin-left: 10px;
+}
+
+/* ======================================================= */
+/* 4. تنسيق الجدول (DATA TABLE) */
+/* ======================================================= */
+.posts-table-container {
+    overflow-x: auto;
+    background-color: var(--card-background);
+    border-radius: var(--border-radius);
+    padding: 10px;
+    box-shadow: var(--shadow);
+}
+
+.data-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    min-width: 800px; /* ضمان حد أدنى للعرض */
+}
+
+.data-table th,
+.data-table td {
+    padding: 15px;
+    text-align: right;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.data-table th {
+    background-color: var(--sidebar-background);
+    color: var(--text-light);
+    font-weight: 700;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+}
+
+/* إزالة الحدود السفلية للصف الأخير */
+.data-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.data-table tbody tr:hover {
+    background-color: rgba(240, 220, 0, 0.05); /* إبراز خفيف عند التمرير */
+}
+
+/* أزرار الإجراءات */
+.action-buttons {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.edit-btn,
+.delete-btn {
+    padding: 8px 12px;
+    border: none;
+    border-radius: 4px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+    font-family: 'Cairo', sans-serif;
+    font-size: 0.9rem;
+}
+
+.edit-btn {
+    background-color: #3498DB; /* أزرق */
+    color: white;
+}
+
+.edit-btn:hover {
+    background-color: #2980B9;
+    transform: translateY(-1px);
+}
+
+.delete-btn {
+    background-color: var(--error-color); /* أحمر */
+    color: white;
+}
+
+.delete-btn:hover {
+    background-color: #C0392B;
+    transform: translateY(-1px);
+}
+
+.edit-btn i,
+.delete-btn i {
+    margin-left: 5px;
+}
+
+/* ======================================================= */
+/* 5. تنسيق الأوسمة (TAGS) */
+/* ======================================================= */
+.tag {
+    display: inline-block;
+    padding: 4px 10px;
+    border-radius: 20px; /* أصبحت مستديرة أكثر */
+    font-size: 0.8rem;
+    font-weight: 700;
+    line-height: 1.2;
+    text-align: center;
+    white-space: nowrap;
+    min-width: 75px;
+}
+
+.tag-featured {
+    background-color: var(--secondary-yellow);
+    color: var(--dark-background);
+}
+
+.tag-festival {
+    background-color: var(--primary-red);
+    color: white;
+}
+
+.tag-news {
+    background-color: var(--success-color); /* أخضر */
+    color: var(--dark-background);
+}
+
+.tag-timeline {
+    background-color: #3498DB; /* أزرق */
+    color: white;
+}
+.tag-ticker {
+    background-color: #9a1fd7; /* أزرق */
+    color: white;
+}
+.tag-article {
+    background-color: #d7841f; /* أزرق */
+    color: white;
+}
+.tag-general {
+    background-color: var(--border-color);
+    color: var(--text-muted);
+}
+/* ======================================================= */
+/* 6. تنسيق نموذج الإضافة والتعديل (FORM LAYOUT) */
+/* ======================================================= */
+
+.form-card {
+    background-color: var(--card-background);
+    padding: 30px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    margin-bottom: 30px;
+}
+
+.form-card h2 {
+    color: var(--secondary-yellow);
+    font-size: 1.5rem;
+    margin-top: 20px;
+    margin-bottom: 25px;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 10px;
+    font-weight: 700;
+}
+
+.form-card h2 i {
+    margin-left: 10px;
+    color: var(--primary-red);
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 700;
+    color: var(--text-light);
+    font-size: 1rem;
+}
+
+textarea.form-control {
+    resize: vertical;
+    min-height: 120px;
+}
+
+.form-divider {
+    border: 0;
+    height: 1px;
+    background-color: var(--border-color);
+    margin: 40px 0;
+}
+
+/* تنسيق النموذج الشبكي لصفين في سطر واحد */
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+/* --- ألسنة اللغات (Language Tabs) --- */
+.lang-tabs-container {
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
+    overflow: hidden;
+}
+
+.lang-tabs {
+    display: flex;
+    background-color: var(--sidebar-background);
+    padding: 0;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.tab-btn {
+    flex-grow: 1;
+    background: transparent;
+    border: none;
+    padding: 15px 20px;
+    color: var(--text-muted);
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 700;
+    transition: all 0.3s;
+    border-left: 1px solid var(--border-color);
+}
+
+.tab-btn:hover {
+    color: var(--text-light);
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+.tab-btn.active {
+    color: var(--secondary-yellow);
+    background-color: var(--card-background);
+    border-bottom: 3px solid var(--secondary-yellow);
+}
+
+.tab-btn i {
+    margin-left: 8px;
+}
+
+.tab-content {
+    padding: 25px;
+    display: none; /* يتم إخفاء المحتوى بشكل افتراضي */
+    background-color: var(--card-background);
+}
+
+.tab-content.active {
+    display: block; /* يتم إظهار المحتوى النشط */
+}
+
+/* --- مجموعة الخيارات (Checkboxes) --- */
+.checkbox-group {
+    padding: 15px 0;
+}
+
+.checkbox-label {
+    display: block;
+    font-weight: 700;
+    margin-bottom: 15px;
+    color: var(--secondary-yellow);
+}
+
+.checkbox-wrapper {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    font-size: 1rem;
+}
+
+.checkbox-wrapper input[type="checkbox"] {
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border: 2px solid var(--primary-red);
+    border-radius: 4px;
+    margin-left: 10px;
+    cursor: pointer;
+    position: relative;
+    transition: all 0.2s;
+}
+
+.checkbox-wrapper input[type="checkbox"]:checked {
+    background-color: var(--primary-red);
+    border-color: var(--primary-red);
+}
+
+/* علامة الصح */
+.checkbox-wrapper input[type="checkbox"]:checked::after {
+    content: "\f00c"; /* أيقونة Font Awesome للـ Check */
+    font-family: 'Font Awesome 6 Free';
+    font-weight: 900;
+    color: var(--text-light);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 12px;
+}
+
+.checkbox-wrapper label {
+    margin-bottom: 0;
+    font-weight: 400;
+    color: var(--text-muted);
+    cursor: pointer;
+}
+
+.checkbox-wrapper label .tag {
+    margin-right: 10px;
+}
+
+/* تنسيق إدخال الملفات */
+.form-control-file {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    border: 1px dashed var(--primary-red); /* حد متقطع مميز */
+    border-radius: var(--border-radius);
+    background-color: var(--dark-background);
+    color: var(--text-light);
+    cursor: pointer;
+}
+
+.submit-btn {
+    width: 100%;
+    /* تستخدم تنسيق .primary-action-btn */
+}
+
+.status-message {
+    padding: 15px;
+    border-radius: var(--border-radius);
+    margin-bottom: 20px;
+    font-weight: 700;
+    text-align: center;
+}
+
+.status-message.success {
+    background-color: rgba(46, 204, 113, 0.2);
+    color: var(--success-color);
+}
+
+.status-message.error {
+    background-color: rgba(231, 76, 60, 0.2);
+    color: var(--error-color);
+}
+/* --- تنسيقات معاينة الصور --- */
+.image-preview-wrapper, .image-grid-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-top: 10px;
+    padding: 10px;
+    border: 1px dashed #ccc;
+    border-radius: 8px;
+    min-height: 100px;
+    background-color: #f9f9f9;
+}
+
+.image-preview {
+    position: relative;
+    width: 120px;
+    height: 120px;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    border: 1px solid #ddd;
+}
+
+.image-preview img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.image-preview .remove-btn {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    background: rgba(220, 53, 69, 0.9);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    transition: background 0.2s;
+}
+
+.image-preview .remove-btn:hover {
+    background: #c82333;
+}
+
+.image-label {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(0,0,0,0.6);
+    color: white;
+    font-size: 10px;
+    text-align: center;
+    padding: 2px 0;
+}

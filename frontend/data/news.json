@@ -1,0 +1,75 @@
+[
+    {
+        "id": 1,
+        "dateAr": "10 نوفمبر 2025",
+        "dateEn": "Nov 10, 2025",
+        "titleAr": "افتتاح مسرحية 'الستارة الأخيرة' الشهر القادم!",
+        "titleEn": "The premiere of 'The Last Curtain' next month!",
+        "summaryAr": "تم الإعلان عن موعد العرض الأول لمسرحيتنا الجديدة التي تتناول قضايا المجتمع المحلي بأسلوب كوميدي نقدي...",
+        "summaryEn": "The announcement was made for the premiere of our new play, which addresses local community issues in a critical comedic style...",
+        "contentAr": "النص التفصيلي للخبر الأول هنا. يشمل كافة التفاصيل...",
+        "contentEn": "The full detailed content of the first news article goes here...",
+        "isFeatured": true,
+        "coverImageUrl": "../images/news/news_1_main.jpg",
+        "coverImageAltAr": "صورة رئيسية لإعلان مسرحية الستارة الأخيرة",
+        "coverImageAltEn": "Main image for 'The Last Curtain' play announcement",
+        "images": [
+            {
+                "url": "../images/news/news_1_main.jpg",
+                "altAr": "صورة رئيسية للستارة الأخيرة"
+            },
+            {
+                "url": "../images/news/news_1_extra.jpg",
+                "altAr": "صورة إضافية من التدريب"
+            }
+        ],
+        "facebookPostLink": "https://facebook.com/post/1",
+        "instagramPostLink": "https://instagram.com/post/1"
+    },
+    {
+        "id": 2,
+        "dateAr": "05 أكتوبر 2025",
+        "dateEn": "Oct 05, 2025",
+        "titleAr": "مشاركتنا في مهرجان قرطاج للمسرح الدولي",
+        "titleEn": "Our participation in Carthage International Theatre Festival",
+        "summaryAr": "تغطية كاملة لرحلة الفرقة إلى تونس وعرض 'قبل السقوط' على خشبة قرطاج...",
+        "summaryEn": "Full coverage of the troupe's trip to Tunis and the performance of 'Before the Fall' on the Carthage stage...",
+        "contentAr": "النص التفصيلي للخبر الثاني هنا...",
+        "contentEn": "The full detailed content of the second news article goes here...",
+        "isFeatured": false,
+        "coverImageUrl": "../images/news/news_2_main.jpg",
+        "coverImageAltAr": "صورة من مشاركة الفرقة في مهرجان قرطاج",
+        "coverImageAltEn": "Photo of the troupe's participation in Carthage Festival",
+        "images": [
+            {
+                "url": "../images/news/news_2_main.jpg",
+                "altAr": "صورة من مهرجان قرطاج"
+            }
+        ],
+        "facebookPostLink": "https://facebook.com/post/2",
+        "instagramPostLink": "https://instagram.com/post/2"
+    },
+    {
+        "id": 3,
+        "dateAr": "20 سبتمبر 2025",
+        "dateEn": "Sep 20, 2025",
+        "titleAr": "ورشة عمل 'كتابة المشهد المسرحي' تطلقها الفرقة",
+        "titleEn": "The troupe launches the 'Theatrical Scene Writing' workshop",
+        "summaryAr": "دعوة للمواهب الشابة للمشاركة في ورشة تدريبية مجانية بقيادة الفنان مولود داؤود.",
+        "summaryEn": "An invitation for young talents to participate in a free training workshop led by artist Mauloud Daoud.",
+        "contentAr": "النص التفصيلي للخبر الثالث هنا...",
+        "contentEn": "The full detailed content of the third news article goes here...",
+        "isFeatured": false,
+        "coverImageUrl": "../images/news/news_3_main.jpg",
+        "coverImageAltAr": "صورة من ورشة عمل كتابة المشهد المسرحي",
+        "coverImageAltEn": "Photo from the Theatrical Scene Writing workshop",
+        "images": [
+            {
+                "url": "../images/news/news_3_main.jpg",
+                "altAr": "صورة من ورشة العمل"
+            }
+        ],
+        "facebookPostLink": "https://facebook.com/post/3",
+        "instagramPostLink": "https://instagram.com/post/3"
+    }
+]

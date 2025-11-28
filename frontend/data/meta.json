@@ -1,0 +1,24 @@
+{
+    "contact": {
+        "email": "kooralzohoor@gmail.com",
+        "phone": "+963988359073",
+        "location": {
+            "ar": "سلمية، سوريا",
+            "en": "Salamiyah, Syria",
+            "de": "Salamiyah, Syrien"
+        },
+        "facebookLink": "https://www.facebook.com/share/1BXBtP7DUp/?mibextid=wwXIfr",
+        "facebookName": "فرقة كور الزهور المسرحية",
+        "instagramLink": "https://www.instagram.com/camel.823794?igsh=MWQxZjh5ajVyMzFveg%3D%3D&utm_source=qr",
+        "instagramName": "@camel.823794"
+    },
+    "titleAr": "فرقة كور الزهور المسرحية",
+    "titleEn": "Koor Al-Zuhur Theatrical Troupe",
+    "titleDe": "Koor Al-Zuhur Theatergruppe",
+    
+    "footer": {
+        "companyInfo_ar": "فرقة مسرحية ملتزمة بتقديم فن يلامس الواقع ويضيء على القضايا الإنسانية، مقرها مدينة سلمية.",
+        "companyInfo_en": "A theatrical troupe committed to presenting art that touches reality and illuminates human issues, based in Salamiyah.",
+        "companyInfo_de": "Eine Theatergruppe, die sich der Kunst verschrieben hat, die Realität berührt und menschliche Themen beleuchtet, mit Sitz in Salamiyah."
+    }
+}

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-en="📞 Koor Al-Zuhur - Contact Us" data-de="📞 Koor Al-Zuhur - Kontakt">📞 كور الزهور - تواصل معنا</title>
+    <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+
+    <link href="https://fonts.googleapis.com/css2?family=Almarai:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:wght=700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <link rel="stylesheet" href="../style/style.css">
+    <link rel="stylesheet" href="../style/contact.css">
+
+
+</head>
+
+<body>
+    <header class="navbar">
+        <div class="logo">
+            <img src="images/light_logo.jpg" alt="شعار فرقة كور الزهور" class="logo-img">
+            <h1 data-en="Koor Al-Zuhur" data-de="Koor Al-Zuhur">فرقة كور الزهور المسرحية </h1>
+        </div>
+        <nav id="main-nav">
+            <a href="index.html" class="active" data-en="Home" data-de="Startseite">الرئيسية</a>
+            <a href="archive.html" data-en="About Us" data-de="Über uns">من نحن</a>
+            <a href="article.html" data-en="Articles" data-de="Artikelliste ">المقالات </a>
+            <a href="works.html" data-en="All Works" data-de="Alle Werke" id="nav-all-works">أعمال الفرقة</a>
+            <a href="maghout.html" data-en="Al-Maghout Archive" data-de="Al-Maghout Archiv">مهرجان الماغوط</a>
+            <a href="contact.html" data-en="Contact Us" data-de="Kontakt">تواصل معنا</a>
+        </nav>
+        <div class="utility-controls">
+            <button id="theme-toggle" class="control-button" aria-label="تبديل الوضع الليلي">
+                <i class="fas fa-sun"></i>
+            </button>
+            
+            <div class="lang-dropdown" id="lang-dropdown-wrapper">
+                <button class="control-button lang-btn" id="lang-menu-button" aria-label="تغيير اللغة">
+                    <i class="fas fa-globe"></i> <span id="current-lang-display">AR</span>
+                    <i class="fas fa-caret-down" style="margin-right: 5px;"></i>
+                </button>
+                <div class="dropdown-content" id="lang-dropdown-content">
+                    <a href="#" data-lang="ar" class="lang-option"><span class="flag-icon">🇸🇾</span> العربية</a>
+                    <a href="#" data-lang="en" class="lang-option"><span class="flag-icon">🇺🇸</span> English</a>
+                    <a href="#" data-lang="de" class="lang-option"><span class="flag-icon">🇩🇪</span> Deutsch</a>
+                </div>
+            </div>
+
+        </div>
+        <button class="nav-toggle" id="nav-toggle-btn" aria-label="القائمة">
+            <i class="fas fa-bars"></i>
+        </button>
+    </header>
+
+    <main>
+
+        <section id="contact-us" class="contact-section">
+            <div class="container">
+                <div class="contact-card fade-in">
+                    <h2 class="section-title" data-en="Get in Touch" data-de="Nehmen Sie Kontakt auf"><i class="fas fa-envelope-open-text"></i> تواصل
+                        معنا</h2>
+
+                    <p class="description"
+                        data-en="We welcome your feedback, suggestions, and proposals for cooperation. Reach out to us through the channels below."
+                        data-de="Wir freuen uns über Ihr Feedback, Ihre Vorschläge und Kooperationsangebote. Kontaktieren Sie uns über die unten stehenden Kanäle.">
+                        نرحب بآرائكم، واقتراحاتكم، ومقترحات التعاون. يمكنكم التواصل معنا عبر القنوات أدناه.
+                    </p>
+
+                    <div class="contact-info-list" id="contact-info-container">
+                        <p data-en="Loading contact information..." data-de="Kontaktinformationen werden geladen...">جاري تحميل معلومات التواصل...</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="footer">
+        <div class="footer-content">
+
+            <div class="footer-col footer-info">
+                <p
+                    data-en="A theatrical troupe committed to presenting art that touches reality and illuminates human issues, based in Salamiyah."
+                    data-de="Eine Theatergruppe, die sich der Kunst verschrieben hat, die Realität berührt und menschliche Themen beleuchtet, mit Sitz in Salamiyah.">
+                    فرقة مسرحية ملتزمة بتقديم فن يلامس الواقع ويضيء على القضايا الإنسانية، مقرها مدينة سلمية.</p>
+            </div>
+            
+            </div>
+
+        <div class="footer-bottom">
+            <p data-en="&copy; 2025 Koor Al-Zuhur Theatrical Troupe. All rights reserved."
+               data-de="&copy; 2025 Koor Al-Zuhur Theatergruppe. Alle Rechte vorbehalten.">
+               &copy; 2025 كور الزهور المسرحية. جميع الحقوق محفوظة.</p>
+        </div>
+    </footer>
+
+    <script src="../scripts/contact.js"></script>
+</body>
+
+</html>

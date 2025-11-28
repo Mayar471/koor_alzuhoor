@@ -1,0 +1,26 @@
+[
+        {
+            "id": 301,
+            "date": "199X",
+            "titleAr": "التأسيس والانطلاقة",
+            "titleEn": "Founding and Launch",
+            "descriptionAr": "تأسيس الفرقة في سلمية بقيادة مولود داؤود وبداية الأعمال الأولى.",
+            "descriptionEn": "The troupe was founded in Salamiyah under the leadership of Mauloud Daoud and the beginning of the first works."
+        },
+        {
+            "id": 302,
+            "date": "2015",
+            "titleAr": "جولة العروض العربية",
+            "titleEn": "Arab Performance Tour",
+            "descriptionAr": "الفرقة تطلق أولى عروضها الكبرى في جولة شملت الأردن ولبنان ومصر.",
+            "descriptionEn": "The troupe launches its first major performances tour covering Jordan, Lebanon, and Egypt."
+        },
+        {
+            "id": 303,
+            "date": "2024",
+            "titleAr": "العودة والتجديد",
+            "titleEn": "Return and Renewal",
+            "descriptionAr": "إعادة هيكلة للفرقة وتقديم عرض 'قبل السقوط' القوي وافتتاح مهرجان الماغوط.",
+            "descriptionEn": "Restructuring of the troupe, presenting the strong 'Before the Fall' show, and opening the Al-Maghout Festival."
+        }
+]
